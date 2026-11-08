@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="920" height="340" role="img" aria-labelledby="title desc">
+  <title id="title">Safe mode switching</title>
+  <desc id="desc">HiDPI records the current modes, previews the new modes temporarily, and asks whether to keep them with a 15 second countdown. Keep applies permanently and remembers the mode. Revert, Escape, timeout or quitting restores the previous modes for the session only.</desc>
+  <style>
+    .bg{fill:#ffffff;stroke:#d0d7de}
+    .t{fill:#1f2328;font:600 15px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    .s{fill:#59636e;font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    .lbl{fill:#59636e;font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    .box{fill:#f6f8fa;stroke:#8c959f;stroke-width:1.2}
+    .accent{fill:#ddf4ff;stroke:#0969da;stroke-width:1.5}
+    .warn{fill:#fff8c5;stroke:#9a6700;stroke-width:1.5}
+    .ok{fill:#dafbe1;stroke:#1a7f37;stroke-width:1.5}
+    .bad{fill:#ffebe9;stroke:#cf222e;stroke-width:1.5}
+    .note{fill:none;stroke:#8c959f;stroke-dasharray:5 4}
+    .line{stroke:#8c959f;stroke-width:1.6;fill:none}
+    .arrow{fill:#8c959f}
+    @media (prefers-color-scheme: dark){
+      .bg{fill:#0d1117;stroke:#30363d}
+      .t{fill:#e6edf3}
+      .s,.lbl{fill:#9198a1}
+      .box{fill:#161b22;stroke:#6e7681}
+      .accent{fill:#0c2d6b;stroke:#4493f8}
+      .warn{fill:#341a00;stroke:#d29922}
+      .ok{fill:#033a16;stroke:#3fb950}
+      .bad{fill:#42110f;stroke:#f85149}
+      .note,.line{stroke:#6e7681}
+      .arrow{fill:#6e7681}
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="arrow" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0.5" y="0.5" width="919" height="339" rx="12"/>
+
+  <rect class="box" x="20" y="100" width="170" height="72" rx="10"/>
+  <text class="t" x="105" y="131" text-anchor="middle">Record current</text>
+  <text class="s" x="105" y="152" text-anchor="middle">modes of each monitor</text>
+  <path class="line" d="M192 136H221" marker-end="url(#a)"/>
+
+  <rect class="accent" x="225" y="100" width="185" height="72" rx="10"/>
+  <text class="t" x="317" y="131" text-anchor="middle">Preview new modes</text>
+  <text class="s" x="317" y="152" text-anchor="middle">temporary · app-only scope</text>
+  <path class="line" d="M412 136H441" marker-end="url(#a)"/>
+
+  <rect class="warn" x="445" y="100" width="195" height="72" rx="10"/>
+  <text class="t" x="542" y="131" text-anchor="middle">Keep these settings?</text>
+  <text class="s" x="542" y="152" text-anchor="middle">15-second countdown</text>
+
+  <path class="line" d="M642 136C668 136 664 86 686 86" marker-end="url(#a)"/>
+  <path class="line" d="M642 136C668 136 664 196 686 196" marker-end="url(#a)"/>
+  <text class="lbl" x="660" y="78" text-anchor="middle">Keep</text>
+  <text class="lbl" x="660" y="222" text-anchor="middle">Revert</text>
+
+  <rect class="ok" x="690" y="50" width="210" height="72" rx="10"/>
+  <text class="t" x="795" y="81" text-anchor="middle">Apply permanently</text>
+  <text class="s" x="795" y="102" text-anchor="middle">+ remember for auto-restore</text>
+
+  <rect class="bad" x="690" y="160" width="210" height="72" rx="10"/>
+  <text class="t" x="795" y="186" text-anchor="middle">Restore previous modes</text>
+  <text class="s" x="795" y="205" text-anchor="middle">session only · nothing saved</text>
+  <text class="s" x="795" y="222" text-anchor="middle">Revert · Esc · timeout · quit</text>
+
+  <rect class="note" x="20" y="262" width="880" height="58" rx="10"/>
+  <text class="s" x="40" y="286">Safety net: if HiDPI crashes or is killed mid-preview, macOS undoes the app-only change on its own.</text>
+  <text class="s" x="40" y="306">Changes to several monitors are staged and committed together — all or nothing. A lock stops the app and CLI racing.</text>
+</svg>
